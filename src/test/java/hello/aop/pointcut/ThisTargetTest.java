@@ -45,6 +45,7 @@ public class ThisTargetTest {
             //해당 프록시는 MemberService를 기반으로 만들어진 프록시임으로 MemberServiceImpl를 모르기에 적용되지 않는다.
             //cglib는 MemberService를 구현한 MemberServiceImpl을 가지고 프록시를 만듬으로
             //프록시 객체의 부모타입을 허용하므로 MemberServiceImpl으로 명시할 시 AOP를 적용한다.
+            //한마디로 프록시 객체가 명시한 객체의 자식인 경우 aop 허용
             log.info("[this-impl]:{}",joinPoint.getSignature());
             return joinPoint.proceed();
         }
